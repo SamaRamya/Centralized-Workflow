@@ -1,0 +1,5 @@
+name: Centralised Workflow
+
+on:
+workflow_call:
+
