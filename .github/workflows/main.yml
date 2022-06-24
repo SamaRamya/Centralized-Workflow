@@ -11,11 +11,11 @@ jobs:
      runs on: ubuntu-latest
    steps:
      -name: "calling"
-      if : ${{inputs.dockerimage == "stellantis-harbor/openjdk11-mvn/v3.5.3/"
+      if : ${{inputs.dockerimage == "stellantis-harbor/openjdk11-mvn/v3.5.3/"}}
       uses: https://github.com/SamaRamya/Centralized-Workflow/blob/main/.github/workflows/maven.yml@main
-      if : ${{inputs.dockerimage == "stellantis-harbor/openjdk11-node12/v1.0/"
-      uses:
-      if : ${{inputs.dockerimage == "stellantis-harbor/java8-gradle7-node16/v1.0/"
-      uses:
+      if : ${{inputs.dockerimage == "stellantis-harbor/openjdk11-node12/v1.0/"}}
+      uses: https://github.com/SamaRamya/Centralized-Workflow/blob/main/.github/workflows/nodejs.yml@main
+      if : ${{inputs.dockerimage == "stellantis-harbor/java8-gradle7-node16/v1.0/"}}
+      uses: https://github.com/SamaRamya/Centralized-Workflow/blob/main/.github/workflows/gradle.yml@main
      
   
