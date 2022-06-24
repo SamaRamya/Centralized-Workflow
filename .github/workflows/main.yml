@@ -2,4 +2,12 @@ name: Centralised Workflow
 
 on:
 workflow_call:
+   inputs:
+      dockerimage:
+          required: true
+          type: string
+jobs:
+   call_nodejs_workflow:
+      uses: https://github.com/SamaRamya/Centralized-Workflow/blob/main/.github/workflows/nodejs.yml@main
+      
 
