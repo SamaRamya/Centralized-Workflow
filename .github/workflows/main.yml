@@ -7,7 +7,10 @@ workflow_call:
           required: true
           type: string
 jobs:
-   call_nodejs_workflow:
-      uses: https://github.com/SamaRamya/Centralized-Workflow/blob/main/.github/workflows/nodejs.yml@main
-      
-
+   build:
+     runs on: ubuntu-latest
+   steps:
+     -name: "calling"
+      if : ${{inputs.dockerimage == "
+     
+  
