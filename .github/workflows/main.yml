@@ -8,15 +8,12 @@ on:
 jobs:
   build:
     call-gradel-workflow:
+       if: ${{ inputs.dockerimage == 'stellantis-harbor/java8-gradle7-node16/v1.0/' }}
        uses: ./.github/workflows/gradel.yml
-       with:
-         dockerimage:
     call-nodejs-workflow:
+       if: ${{ inputs.dockerimage == 'stellantis-harbor/openjdk11-node12/v1.0/' }}
        uses: ./.github/workflows/nodejs.yml
-       with:
-       dockerimage:
     call-maven-workflow:
+       if: ${{ inputs.dockerimage == 'stellantis-harbor/openjdk11-mvn/v3.5.3/' }}
        uses: ./.github/workflows/maven.yml
-       with:
-       dockerimage:
-   
+       
