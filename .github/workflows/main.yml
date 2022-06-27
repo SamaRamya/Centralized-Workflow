@@ -1,4 +1,4 @@
-name:caller workflow
+name: caller workflow
 on: 
   push:
     branches: [main]
