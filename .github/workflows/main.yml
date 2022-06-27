@@ -2,14 +2,20 @@ name:caller workflow
 on:[push]
 
 jobs:
+
   build:
-    call-gradel-workflow:
-       if: ${{ inputs.dockerimage == 'stellantis-harbor/java8-gradle7-node16/v1.0/' }}
-       uses: ./.github/workflows/gradel.yml
-    call-nodejs-workflow:
-       if: ${{ inputs.dockerimage == 'stellantis-harbor/openjdk11-node12/v1.0/' }}
-       uses: ./.github/workflows/nodejs.yml
-    call-maven-workflow:
-       if: ${{ inputs.dockerimage == 'stellantis-harbor/openjdk11-mvn/v3.5.3/' }}
-       uses: ./.github/workflows/maven.yml
+    runs-on: ubuntu-latest
+    
+    steps:
+       -name: call-gradel-workflow
+        if: ${{ inputs.dockerimage == 'stellantis-harbor/java8-gradle7-node16/v1.0/' }}
+        uses: ./.github/workflows/gradel.yml
+        
+       -name: call-nodejs-workflow:
+        if: ${{ inputs.dockerimage == 'stellantis-harbor/openjdk11-node12/v1.0/' }}
+        uses: ./.github/workflows/nodejs.yml
+        
+       -name: call-maven-workflow:
+        if: ${{ inputs.dockerimage == 'stellantis-harbor/openjdk11-mvn/v3.5.3/' }}
+        uses: ./.github/workflows/maven.yml
        
