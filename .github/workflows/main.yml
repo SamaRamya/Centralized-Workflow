@@ -1,5 +1,5 @@
 name:caller workflow
-on:[push]
+on: [push]
 
 jobs:
 
