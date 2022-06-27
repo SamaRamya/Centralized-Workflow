@@ -10,17 +10,17 @@ jobs:
     
     steps:
        -name: call-gradel-workflow
-        uses: ./.github/workflows/gradel.yml
+        uses: SamaRamya/Centralized-workflow/.github/workflows/gradel.yml@main
         with:
           dockerimage: abc
         
        -name: call-nodejs-workflow:
-        uses: ./.github/workflows/nodejs.yml
+        uses: SamaRamya/Centralized-workflow/.github/workflows/nodejs.yml@main
         with:
           dockerimage: def
         
        -name: call-maven-workflow:
-        uses: ./.github/workflows/maven.yml
+        uses:SamaRamya/Centralized-workflow/.github/workflows/maven.yml@main
         with:
           dockerimage: ghi
        
