@@ -1,10 +1,17 @@
-name : gradel
+name : Reusable gradel workflow
 on :
- push:
-   branches: [master]
+  workflow_call:
+     inputs:
+       dockerimage:
+           required: true
+           type: string
+           
 jobs:
   my-job:
-    runs-on : ubuntu-latest
+    name: Pass input and secrets to my-action
+    runs-on: ubuntu-latest
     steps:
-     -name: my-step
-      run: echo "gradel"
+      - uses: ./.github/workflows/main.yml
+        with:
+          dockerimage: ${{ inputs.dockerimage }}
+          
