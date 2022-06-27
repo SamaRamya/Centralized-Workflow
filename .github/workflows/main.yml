@@ -6,21 +6,18 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
-    
-    steps:
-       -name: call-gradel-workflow
-        uses: SamaRamya/Centralized-workflow/.github/workflows/gradel.yml@main
-        with:
-          dockerimage: abc
+     -name: call-gradel-workflow
+      uses: SamaRamya/Centralized-Workflow/.github/workflows/gradel.yml@main
+      with:
+        dockerimage: abc
         
-       -name: call-nodejs-workflow:
-        uses: SamaRamya/Centralized-workflow/.github/workflows/nodejs.yml@main
-        with:
-          dockerimage: def
+     -name: call-nodejs-workflow:
+      uses: SamaRamya/Centralized-Workflow/.github/workflows/nodejs.yml@main
+      with:
+        dockerimage: def
         
-       -name: call-maven-workflow:
-        uses:SamaRamya/Centralized-workflow/.github/workflows/maven.yml@main
-        with:
-          dockerimage: ghi
+     -name: call-maven-workflow:
+      uses: SamaRamya/Centralized-Workflow/.github/workflows/maven.yml@main
+      with:
+        dockerimage: ghi
        
