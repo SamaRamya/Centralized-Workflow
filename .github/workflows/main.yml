@@ -11,10 +11,16 @@ jobs:
     steps:
        -name: call-gradel-workflow
         uses: ./.github/workflows/gradel.yml
+        with:
+          dockerimage: abc
         
        -name: call-nodejs-workflow:
         uses: ./.github/workflows/nodejs.yml
+        with:
+          dockerimage: def
         
        -name: call-maven-workflow:
         uses: ./.github/workflows/maven.yml
+        with:
+          dockerimage: ghi
        
