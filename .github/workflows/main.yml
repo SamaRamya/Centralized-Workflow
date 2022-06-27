@@ -6,13 +6,11 @@ on:
 jobs:
 
   job1:
-     uses: SamaRamya/Centralized-Workflow/.github/workflows/nodejs.yml@main
-     with:
-        dockerimage: def
-        
+     uses: 
+         SamaRamya/Centralized-Workflow/.github/workflows/nodejs.yml@main
+     
   job2:
-     uses: SamaRamya/Centralized-Workflow/.github/workflows/maven.yml@main
-     with:
-        dockerimage: ghi
-       
+     uses: 
+         SamaRamya/Centralized-Workflow/.github/workflows/maven.yml@main
+     
 
